@@ -5,6 +5,11 @@ import matplotlib.colors as colors
 plt.close('all')
 
 
+def dump_array_to_fits(array,filename):
+    hdu = pyfits.PrimaryHDU(array)
+    hdulist = pyfits.HDUList([hdu])
+    hdulist.writeto(filename,overwrite=True)
+
 
 plotdir="/home/dccollins/PigPen"
 basedir="/data/cb1/Projects/P49_EE_BB"
